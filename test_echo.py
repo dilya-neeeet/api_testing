@@ -28,7 +28,7 @@ def test_get_empty(base_url, session):
 def test_get(base_url, session, sample_data):
     response = session.get(f"{base_url}get", params=sample_data)
     assert response.status_code == 200
-    assert response.json()['args']['name'] == 'Hello, world!'
+    assert response.json()['args']['name'] == sample_data['name']
     assert response.json()['args']['surname'] == sample_data['surname']
 
 
